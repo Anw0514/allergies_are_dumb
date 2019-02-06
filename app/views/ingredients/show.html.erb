@@ -1,0 +1,8 @@
+<h1><%=@ingredient.name%></h1>
+<h3>Recipes having this ingredient:</h3>
+<%@ingredient.recipes.each do |recipe|%>
+<ul>
+<li><%=recipe.name%></li>
+</ul>
+<%end%>
+<%=button_to "Go back to ingredients index", ingredients_path, method: :get%>

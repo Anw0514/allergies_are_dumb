@@ -1,0 +1,11 @@
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label "User: " %>
+  <%= f.collection_select(:user_id, @users, :id, :name) %>
+  <br>
+  <%= f.label "Ingredients (select multiple): " %>
+  <%= f.collection_select(:ingredient_ids, @ingredients, :id, :name, {}, {multiple: true}) %>
+  <%= f.submit %>
+  <% end %>

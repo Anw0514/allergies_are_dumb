@@ -1,0 +1,7 @@
+<h1>Ingredients Index</h1>
+<%ingredients = @ingredients.sort_by { |ingredient| -ingredient.allergies.count }%>
+<%ingredients.each do |ingredient|%>
+<ul>
+<li><%=link_to ingredient.name, ingredient_path(ingredient)%> | Number of allergies: <%=ingredient.allergies.count%></li>
+</ul>
+<%end%>

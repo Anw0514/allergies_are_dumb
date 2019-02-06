@@ -1,0 +1,21 @@
+<h1><%= @user.name %></h1>
+<h3>Allergies: </h3>
+  <% if @user.ingredients != nil || @user.ingredients != [] %>
+    <ul>
+      <% @user.ingredients.each do |ingredient| %>
+        <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div>None</div>
+  <% end %>
+<h3>Recipes: </h3>
+  <% if @user.recipes != nil || @user.recipes != [] %>
+    <ul>
+      <% @user.recipes.each do |recipe| %>
+        <li><%= link_to recipe.name, recipes_path %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div>None</div>
+  <% end %>
